@@ -1,0 +1,133 @@
+html, body {
+	height: 100%;
+	margin: 0;
+	background: url(/image/bg.jpg);
+	background-size: 100%;
+	background-position: center; 
+	transition: background-size 1s;
+	transition: background 1s;
+}
+.FirstView {
+	background: rgba(256,256,256,0.6);
+	margin: 0 auto;
+	height: 50%;
+	width: 50%;
+	position: relative;
+	top: 20%;
+	padding:2% 1% 1% 5%;
+	border-radius: 20px
+}
+.FirstView div {
+	float: left;
+}
+.R1 {
+	background: #000000;
+	width: 3%;
+	height: 85%
+}
+.R2 {
+	background: #333333;
+	width: 16%;
+	height: 10%;
+	border-radius: 10%
+}
+.R3 {
+	background: #666666;
+	width: 3%;
+	height: 30%;
+}
+.R4 {
+	background: #999999;
+	width: 45%;
+	height: 3%;
+	position: relative;
+	top: 30%;
+	left: -17%;
+}
+.R5 {
+	background: #cccccc;
+	height: 65%;
+	width: 2%;
+	position: relative;
+	top: 33%;
+	left: -53%;
+	-webkit-transform: rotate(-50deg);
+	border-top-left-radius: 100%
+}
+.I {
+	background: #00ffff;
+	width: 4%;
+	height: 40%;
+	position: relative;
+	top: 35%;
+	left: -35%;
+	border-radius: 35%;
+}
+.Ihead {
+	position: relative;
+	top: 5%;
+	left: -44%;
+	width: 10%
+}
+.C1 {
+	background: infobackground;
+	width: 3%;
+	height: 60%;
+	position: relative;
+	top: 33%;
+	left: -21%;
+	-webkit-transform: rotate(50deg);
+	border-bottom-right-radius: 70%
+}
+.C2 {
+	background: infobackground;
+	width: 25%;
+	height: 5%;
+	position: relative;
+	top: 20%;
+	left: -28%
+}
+.AR {
+	color: #f08080;
+	font-family: helvetica, verdana, sans-serif;
+	font-size: 60px;
+	font-weight: bolder; 
+	font-style: oblique;
+	position: relative;
+	top: 56%;
+	left: -30%
+}
+.D {
+	background: highlight;
+	width: 24%;
+	height: 85%;
+	position: relative;
+	top: -23%;
+	left: -5%;
+	border-top-right-radius: 100%;
+	border-bottom-right-radius: 100%;
+}
+.IN {
+	content: url(/image/in.png);
+	position: relative;
+	top: 45%;
+	left: 25%;
+	width: 30%;
+	opacity: 0;
+	transition: opacity 0.5s linear;
+	-webkit-animation: GoIn;
+	cursor: pointer;
+}
+
+.FirstView:hover .IN {
+	opacity: 1;
+}
+
+-webkit-keyframes GoIn {
+	from {
+		background-size: 100%
+	}
+	to {
+		background-size: 200%
+	}
+}
