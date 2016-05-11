@@ -1,25 +1,30 @@
-var test = document.querySelector('.word');
-// document.body.style.transition = 'background-size 1s'
-test.addEventListener('mouseover', function() {
+var wait = new waitEnd();
+
+var word = document.querySelector('.word');
+word.addEventListener('mouseover', function() {
 	document.body.style.backgroundSize = '150%';
 })
-test.addEventListener('mouseout', function() {
+word.addEventListener('mouseout', function() {
 	document.body.style.backgroundSize = '100%' 
 })
-test.addEventListener('click', function() {
-	this.style.color = 'white'
-	document.body.style.background = 'black'
-	document.body.style.backgroundSize = '100%'
+word.addEventListener('click', function() {
+	this.style.opacity = 0 ;
+	var view = document.querySelector('.FirstView')
+	document.body.removeChild(view);
+	document.body.style.background = 'threedface'
+	document.body.style.backgroundSize = '120%'
+	wait.start()
 	setTimeout(function() {		
-		document.body.style.background = 'url(/image/18518352_153416231114_2.jpg) center';
-		document.body.style.backgroundSize = '100%';
-		var view = document.querySelector('.FirstView')
-		document.body.removeChild(view);
-		var root = document.createElement('div');
-		root.id = 'root';
-		root.innerHTML = 'writing now'
-		document.body.appendChild(root)
-	}, 500);
-	//document.querySelector('.FirstView').style.visibility = 'hidden'
-	
+		afterLoad('/image/18518352_153416231114_2.jpg', 'image', function() {
+			wait.end()
+			document.body.style.background = 'url(/image/18518352_153416231114_2.jpg)'
+			document.body.style.backgroundSize = '100%'
+			var video = document.createElement('audio')
+			video.src = '/resources/bgMusic.mp3' 
+			video.controls = 'controls'
+			video.autoplay = "autoplay"
+			document.body.appendChild(video)
+			
+		})
+	}, 500);	
 })
