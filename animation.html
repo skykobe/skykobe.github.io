@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<style type="text/css">
+html {
+    height: 100%;
+    padding: 0;
+}
+
+body {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    background: threedface;
+}
+
+.wait_body {
+    margin: 0 auto;
+    background: highlighttext;
+    border-radius: 50%;
+    height: 130px;
+    width: 130px;
+    background: -webkit-radial-gradient(40px 40px, circle, #000, #222, #333, #ccc)
+}
+
+.wait_word {
+    font-family: verdana, sans-serif;
+    position: relative;
+    top: 30%;
+    color: #00ffff;
+    font-size: 35px;
+    text-align: center;
+}
+
+.stage {
+    height: 200px;
+    width: 200px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-80%);
+    margin: 0 auto;
+    -webkit-perspective: 1200px;
+    -webkit-perspective-origin: 50% 50%;
+}
+
+.shadow {
+    position: absolute;
+    top: -20%;
+    margin: 0 auto;
+    width: 130px;
+    height: 130px;
+    background: -webkit-radial-gradient(50% 50%, circle, #666, #999, #ccc 80%);
+    -webkit-transform: rotateX(90deg) translateZ(-150px);
+    z-index: -1;
+}
+
+.star1 {
+    float: left;
+    background: infobackground;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: -webkit-radial-gradient(10px 10px, circle, #fff8dc, #ffffff);
+    -webkit-animation: starMove1 6s linear infinite;
+}
+
+.star2 {
+    position: relative;
+    left: 85%;
+    background: highlight;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: -webkit-radial-gradient(10px 10px, circle, #00ffff, #6495ed);
+    -webkit-animation: starMove2 6s linear 1s infinite;
+}
+
+.star3 {
+    background: #FF0000;
+    position: absolute;
+    top: 40%;
+    left: -10%;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: -webkit-radial-gradient(10px 10px, circle, #ff69b4, #ff1493);
+    -webkit-animation: starMove3 6s linear 0.5s infinite;
+}
+
+@-webkit-keyframes starMove1 {
+    0% {
+        transform: translate(0px, 0px);
+        opacity: 1;
+    }
+    10% {
+        transform: translate(25px, 50px);
+        opacity: 1;
+    }
+    20% {
+        transform: translate(40px, 80px);
+        opacity: 1;
+    }
+    30% {
+        transform: translate(80px, 110px);
+        opacity: 1;
+    }
+    40% {
+        transform: translate(120px, 140px);
+        opacity: 1;
+    }
+    50% {
+        transform: translate(160px, 160px);
+        opacity: 1;
+    }
+    56% {
+        opacity: 0;
+    }
+    60% {
+        transform: translate(140px, 100px);
+        opacity: 0;
+    }
+    70% {
+        transform: translate(100px, 70px);
+        opacity: 0;
+    }
+    80% {
+        transform: translate(60px, 40px);
+        opacity: 0;
+    }
+    90% {
+        transform: translate(30px, 20px);
+        opacity: 0;
+    }
+    93% {
+        opacity: 0.2
+    }
+    100% {
+        transform: translate(0px, 0px);
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes starMove2 {
+    0% {
+        opacity: 1;
+    }
+    10% {
+        transform: translate(-25px, 50px);
+        opacity: 1;
+    }
+    20% {
+        transform: translate(-40px, 90px);
+        opacity: 1;
+    }
+    30% {
+        transform: translate(-80px, 120px);
+        opacity: 1;
+    }
+    40% {
+        transform: translate(-120px, 140px);
+        opacity: 1
+    }
+    50% {
+        transform: translate(-160px, 160px);
+        opacity: 1
+    }
+    56% {
+        opacity: 0
+    }
+    60% {
+        transform: translate(-140px, 95px);
+        opacity: 0;
+    }
+    70% {
+        transform: translate(-100px, 70px);
+        opacity: 0;
+    }
+    80% {
+        transform: translate(-60px, 40px);
+        opacity: 0;
+    }
+    90% {
+        transform: translate(-30px, 20px);
+        opacity: 0;
+    }
+    93% {
+        opacity: 0.3
+    }
+    100% {
+        opacity: 1
+    }
+}
+
+@-webkit-keyframes starMove3 {
+    0% {
+        left: -10%;
+        opacity: 1;
+    }
+    10% {
+        left: 20%;
+        opacity: 1;
+    }
+    20% {
+        left: 40%;
+        opacity: 1;
+    }
+    30% {
+        left: 60%;
+        opacity: 1;
+    }
+    40% {
+        left: 80%;
+        opacity: 1
+    }
+    50% {
+        left: 95%;
+        opacity: 1
+    }
+    56% {
+        opacity: 0
+    }
+    60% {
+        opacity: 0;
+    }
+    70% {
+        opacity: 0;
+    }
+    80% {
+        opacity: 0;
+    }
+    90% {
+        opacity: 0;
+    }
+    93% {
+        opacity: 0.3
+    }
+    100% {
+        opacity: 1
+    }
+}
+</style>
+</head>
+<body>
+<div class="stage">
+    <div class="star1"></div>
+    <div class="star2"></div>
+    <div class="star3"></div>
+    <div class="wait_body">
+        <span class='wait_word'>loading</span>
+        <span class="shadow"></span>
+    </div>
+</div>
+</body>
+</html>
