@@ -1,3 +1,11 @@
+@font-face {
+	font-family: 'homestead';
+	src: url('/resources/font/Homestead-Regular.ttf');
+}
+@font-face {
+	font-family: 'code';
+	src: url('/resources/font/CODE-Bold.otf');
+}
 html {
 	height: 100%;
 	padding: 0;
@@ -6,7 +14,12 @@ body {
 	height: 100%;
 	padding: 0;
 	margin: 0;
+	
 /*	background: threedface;*/
+	
+}
+.blur {
+	height: 100%;
 	background: url(/image/bg.jpg);
 	background-size: 100%;
 	background-position: center;
@@ -37,7 +50,7 @@ a {
 	border: 2px solid inactivecaption;
 	width: 0%;
 	opacity: 0;
-	transition: width 0.7s ease, opacity 0.5s ease-in;
+	transition: width 0.7s ease-out, opacity 0.5s ease-in;
 }
 
 .FirstView:hover .Ricardo{
@@ -49,13 +62,13 @@ a {
 }
 
 .FirstView:hover hr {
-	width: 92%;
+	width: 95%;
 	opacity: 1;
 }
 
 .Ricardo {
 	color: #00ffff;
-	font-family: verdana, sans-serif;
+	font-family: homestead, verdana, sans-serif;
 	font-size: 800%;
 	font-weight: bolder; 
 	font-style: oblique;
@@ -92,11 +105,12 @@ a {
 	margin: 0 auto;
 	-webkit-perspective: 1200px;
 	-webkit-perspective-origin: 50% 50%;
+	text-align: center;
 }
 
 .shadow {
-	position: absolute;
-	top: -20%;
+	position: relative;
+	top: -70%;
 	margin: 0 auto;
   	width: 130px;
   	height: 130px;
@@ -136,6 +150,42 @@ a {
 	border-radius: 50%;
 	background: -webkit-radial-gradient(10px 10px, circle, #ff69b4, #ff1493);
 	-webkit-animation: starMove3 6s linear 0.5s infinite;
+}
+
+.musicPlay {
+	cursor: pointer;
+	-webkit-animation: musicplay 3s linear infinite;
+	transition: transform 2s linear;
+}
+
+.musicPause {
+	cursor: pointer;
+}
+
+.class1 {
+	text-align: center;
+	width: 60%;
+	margin: 0 auto;
+	transition: transform 1s linear;
+	transform: translateY(30%);
+	font-family: homestead;
+	font-size: 50px;
+	color: white
+}
+
+.class1 p {
+	font-family: code;
+	font-size: 35px;
+	transition: color 0.5s linear;
+	color: #00ffff;
+}
+
+.class2 {
+
+}
+
+.class3 {
+
 }
 
 @-webkit-keyframes starMove1 {
@@ -287,5 +337,14 @@ a {
 	}
 	100% {
 		opacity: 1
+	}
+}
+
+@-webkit-keyframes musicplay {
+	from {
+		transform: rotateZ(0deg);
+	}
+	to {
+		transform: rotateZ(360deg);
 	}
 }
