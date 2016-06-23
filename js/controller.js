@@ -53,10 +53,10 @@ function FirstPage () {
 	root.innerHTML = element
 	var word = $('.word');
 	word.addEventListener('mouseover', function() {
-		root.style.backgroundSize = '150%';
+		root.style.transform = 'scale(1.2)'
 	})
 	word.addEventListener('mouseout', function() {
-		root.style.backgroundSize = '100%' 
+		root.style.transform = ''
 	})
 	word.addEventListener('click', function() {
 		var view = $('.FirstView')

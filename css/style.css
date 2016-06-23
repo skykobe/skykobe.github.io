@@ -14,9 +14,7 @@ body {
 	height: 100%;
 	padding: 0;
 	margin: 0;
-	
-/*	background: threedface;*/
-	
+		overflow: hidden;
 }
 .blur {
 	height: 100%;
@@ -31,7 +29,14 @@ a {
 	text-decoration: none
 }
 #root {
-	color: white
+	color: white;
+	height: 100%;
+	background: url(/image/bg.jpg);
+	background-size: 100%;
+	background-position: center;
+	transition-property: background-size, background, transform;
+	transition-duration: 0.8s;
+	transition-timing-function: ease, ease-in;
 }
 .FirstView {
 	margin: 0 auto;
