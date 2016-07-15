@@ -14,7 +14,8 @@ body {
 	height: 100%;
 	padding: 0;
 	margin: 0;
-		overflow: hidden;
+	overflow: hidden;
+	-webkit-user-select:none;
 }
 .blur {
 	height: 100%;
@@ -191,6 +192,67 @@ a {
 
 .class3 {
 
+}
+.menuOut {
+	position: fixed;
+	top: 40%;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	font-size: 25px;
+	font-weight: bold;
+	background-color: #00ffff;
+	transition: 0.8s;
+	cursor: pointer;
+	color: black;
+}
+.word-menu {
+	font-family: code;
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+.r1 {
+	opacity: 0;
+	text-align: center;
+	border-radius: 50%;
+	background-color: #7fffd4;
+	width: 50px;
+	height: 50px;
+	transform: translate(50%, 0%);
+	transition: 0.8s;
+}
+.r2 {
+	opacity: 0;
+	border-radius: 50%;
+	background-color: #f0e68c;
+	width: 50px;
+	height: 50px;
+	transform: translate(50%, -100%);
+	transition: 0.8s;
+}
+.r3 {
+	opacity: 0;
+	border-radius: 50%;
+	background-color: #fa8072;
+	width: 50px;
+	height: 50px;
+	transform: translate(50%, -200%);
+	transition: 0.8s;
+}
+
+.Mroot {
+	-webkit-filter: saturate(2);
+}
+
+.Wroot {
+	-webkit-filter: contrast(1.5);
+}
+
+.Troot {
+	-webkit-filter: hue-rotate(30deg);
 }
 
 @-webkit-keyframes starMove1 {
