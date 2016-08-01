@@ -1,4 +1,9 @@
 var loopResult = false, loopCheck = false;
+var root = $("#root")
+var url = {
+	hash: 'RicardoPage'
+};
+var timer
 function test () {
 	if(!loopCheck) {
 	   	var img = new Image();
@@ -40,7 +45,7 @@ function afterLoad (url, type, callback) {
 		if(url instanceof Array) {
 
 		} else {
-
+			jsLoad(url, callback)
 		}
 	}
 	if(type == 'music') {
@@ -69,6 +74,7 @@ function jsLoad(url, fn) {
 			fn()
 		}
 	})
+	$("#root").appendChild(script)
 }
 
 function musicLoad(url, fn) {
@@ -93,7 +99,6 @@ function waitEnd () {
 	this.end = function (node) {
 		$("#root").removeChild(node)
 	}
-
 }
 
 function Router () {
@@ -114,5 +119,89 @@ function Router () {
 				}
 			}
 		}
+	}
+}
+
+function backgroundChange(node, url, delay) {
+	var num = 0;
+	setInterval(function() {
+		if(num == url.length) num = 0;
+		node.style.background = 'url(' + url[num] + ')'
+	}, delay)
+}
+
+//开始习惯一下匿名函数的定义
+var M_overChange = function() {
+    this.style.opacity = 1;
+    this.style.background = '#7fffef';
+    url.hash = 'music';
+    root.className = 'Mroot';
+}
+var M_outChange = function() {
+	this.style.opacity = 0.7;
+    this.style.background = '#7fffd4';
+    url.hash = 'RicardoPage';
+    root.className = '';
+}
+var W_overChange = function() {
+	this.style.opacity = 1;
+    this.style.background = '#f0e6ee';
+    url.hash = 'wall';
+    root.className = 'Wroot';
+}
+var W_outChange = function() {
+    this.style.opacity = 0.7;
+    this.style.background = '#f0e68c';
+    url.hash = 'RicardoPage';
+    root.className = '';
+}
+var T_overChange = function() {
+	this.style.opacity = 1;
+    this.style.background = '#fa80bb';
+    url.hash = 'word';
+    root.className = 'Troot';
+}
+var T_outChange = function() {
+    this.style.opacity = 0.7;
+    this.style.background = '#fa8072';
+    url.hash = 'RicardoPage';
+    root.className = '';
+}
+
+// 音乐播放器的等待
+var musicPlayerInit = function() {	
+	var timer;
+	this.init = function () {
+		var node = '<div class="m_wait">' + 
+				   '<div class="m">i</div>' + 
+				   '<div class="m">n</div>' + 
+				   '<div class="m">i</div>' + 
+				   '<div class="m">t</div>' + 
+				   '<div class="m">.</div>' + 
+		           '<div class="m">.</div>' +
+				   '<div class="m">.</div>' +
+				   '<div class="m">.</div>' +
+				   '<div class="m">.</div>' +
+				   '</div>'
+		root.innerHTML = node;
+		var nodeList = document.querySelectorAll('.m')
+		var wait = function() {
+			for(var i = 0; i < nodeList.length; i++) {
+				(function(i) {
+					setTimeout(function() { // 上浮
+						nodeList[i].style.transform = 'translateY(-50px)'	
+					}, 800 + i * 350)
+					setTimeout(function() { // 下浮
+						nodeList[i].style.transform = 'translateY(0px)'	
+					}, 1300 + i * 400)
+				})(i)
+			} 
+		}
+		wait()
+		timer = setInterval(wait, 4500)
+	}
+	this.end = function() {
+		clearInterval(timer)
+		root.innerHTML = ''
 	}
 }

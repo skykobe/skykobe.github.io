@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>测试各页面组件的样式开发</title>
+	<style type="text/css">
+	body,html {
+		height: 100%;
+		background: #e1fffa
+	}
+	.musicFrame {
+		width: 65%;
+		margin: 40px auto 0px auto;
+		height: 80%
+	}
+	.player {
+		width: 42%;
+		background: url(/image/music/m-3.png);
+		background-size: 100%;
+		height: 100%;
+		float: left;
+		box-shadow: 0px 0px 30px 10px rgba(0,0,0,.2);
+		border-radius: 3px;
+	}
+	.test {
+		width: 2%;
+		height: 100%;
+		float: left;
+	}
+	.songer {
+		width: 56%;
+		background: white;
+		height: 100%;
+		float: left;
+		box-shadow: 0px 0px 30px 10px rgba(0,0,0,.2);
+		border-radius: 3px;
+	}
+	.playerTop {
+		box-sizing: border-box;
+		padding-top: 2px;
+		padding-bottom: 2px;
+		padding-left: 85%;
+		height: 25px;
+		background: rgba(255,255,255, 0.7);
+	}
+	.playerTop img {
+		float: left;
+		margin-right: 3px;
+	}
+	.playerBottom {
+		box-sizing: border-box;
+		background: rgba(255,255,255, 0.6);
+		height: 90px;
+		padding: 15px 3px 15px 3px;
+		position: relative;
+		top: 100%;
+		-webkit-transform: translateY(-115px)
+	}
+	.playerBottom .col{
+		box-sizing: border-box;
+		float: left;
+		width: 20%;
+		height: 100%;
+	}
+	.col img {
+		position: relative;
+		left: 50%;
+		top: 50%;
+		height: 35px;
+		-webkit-transform: translateY(-50%) translateX(-50%)
+	}
+	</style>
+</head>
+<body>
+  <div class="musicFrame">
+  	<div class="player">
+  		<div class="playerTop">
+  			<img src="/image/music/m-4.png">
+  			<img src="/image/music/m-5.png">
+  		</div>
+  		<div class="playerBottom">
+  			<div class="col">
+  				<img src="/image/music/m-7.png" style="height: 20px;">
+  			</div>
+  			<div class="col">
+  				<img src="/image/music/m-8.png">
+  			</div>
+  			<div class="col">
+  				<img src="/image/music/m-9.png">
+  			</div>
+  			<div class="col">
+  				<img src="/image/music/m-8R.png">
+  			</div>
+  			<div class="col">
+  				<img src="/image/music/m-11.png" style="height: 20px">
+  			</div>
+  		</div>
+  	</div>
+  	<div class="test"></div>
+  	<div class="songer">
+
+  	</div>
+  </div>
+<script type="text/javascript">
+
+</script>
+</body>
+</html>

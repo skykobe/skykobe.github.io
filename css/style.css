@@ -254,7 +254,27 @@ a {
 .Troot {
 	-webkit-filter: hue-rotate(30deg);
 }
-
+.m_wait {
+	position: relative;
+	top: 45%;
+	width: 360px;
+	margin: 0 auto;
+	padding-left: 60px;
+	padding-right: 60px;
+	font-size: 40px;
+	transform: translateY(-50%);
+	font-family: homestead;
+	height: 50px;
+}
+.m_wait div {
+	-webkit-transition:0.8s ease-in-out;
+	color: #00FFFF;
+	float: left;
+	margin: 0;
+	padding: 0;
+	width: 40px;
+	text-align: center;
+}
 @-webkit-keyframes starMove1 {
 	0% {
 		transform: translate(0px, 0px);
