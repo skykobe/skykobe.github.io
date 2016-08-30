@@ -78,6 +78,7 @@ function RicardoPage() {
 		      } else {
 		      	root.className = ''
 		      }
+		      document.onmouseup = null;
 		    }
 
 		})			
