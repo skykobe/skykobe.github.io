@@ -9,3 +9,4 @@
 #### - 3.[动手写一个简陋的路由系统](https://github.com/skykobe/skykobe.github.io/issues/3)
 #### - 4.[自我谈一下new和原型对象](https://github.com/skykobe/skykobe.github.io/issues/5)
 #### - 5.[事件绑定的习惯位置，以及词法作用域](https://github.com/skykobe/skykobe.github.io/issues/6)
+#### - 6.[JavaScript设计模式学习笔记之一](https://github.com/skykobe/skykobe.github.io/issues/7)
