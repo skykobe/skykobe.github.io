@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title></title>
+	<style>
+		.container {
+			width: 200px;
+			height: 200px;
+			padding: 0px;
+			position: relative;
+			margin: 50px auto 40px;
+			perspective: 1000px;
+			transform: translateZ( -100px );
+		}
+		#cube {
+			width: 100%;
+  		height: 100%;
+  		position: absolute;
+  		transform-style: preserve-3d;
+  		transition: 1s;
+  		transform: translateZ( -100px );
+		}
+		#cube figure {
+  		width: 196px;
+  		height: 196px;
+  		display: block;
+  		position: absolute;
+  		border: 2px solid gray;
+			margin: 0px;
+		}     
+		#cube .front  { 
+			transform: rotateY(   0deg ) translateZ( 100px );
+			background: rgba(0,0,0, 0.5);
+			text-align: center;
+			color: white
+		}
+		#cube .back   { 
+			transform: rotateX( 180deg ) translateZ( 100px );
+			background: rgba(20,255,255, 0.5);
+			text-align: center;
+		}
+		#cube .right  { 
+			transform: rotateY(  90deg ) translateZ( 100px );
+			background: rgba(222,184,135, 0.5);
+			text-align: center;
+		}
+		#cube .left   {
+		  transform: rotateY( -90deg ) translateZ( 100px );
+		  background: rgba(169,169,169, 0.5);
+			text-align: center;
+		}
+		#cube .top    { 
+			transform: rotateX(  90deg ) translateZ( 100px );
+			background: rgba(255,140,0, 0.5);
+			text-align: center;
+		}
+		#cube .bottom { 
+			transform: rotateX( -90deg ) translateZ( 100px );
+			background: rgba(0,206,209, 0.5);
+			text-align: center;
+		} 
+		#cube.show-back { 
+			transform: translateZ( -100px ) rotateX( -180deg ); 
+		}   
+		#cube.show-front { 
+			transform: translateZ( -100px ) 
+		}   
+		#cube.show-left { 
+			transform: translateZ( -100px ) rotateY( 90deg ); 
+		}  
+		#cube.show-right { 
+			transform: translateZ( -100px ) rotateY( -90deg ); 
+		}  
+		#cube.show-top { 
+			transform: translateZ( -100px ) rotateX( -90deg ); 
+		} 
+		#cube.show-bottom { 
+			transform: translateZ( -100px ) rotateX( 90deg ); 
+		}   
+		.word {
+			height: 100%;
+			font-size: 45px;
+			font-weight: bolder;
+			position: relative;
+			top: 40%
+		} 
+	</style>
+</head>
+<body>
+	<section class="container" id="t" style="display: block">
+  	<div id="cube">
+    	<figure class="front">
+    		<div class="word">
+    			1
+    		</div>
+    	</figure>
+    	<figure class="back">
+    		<div class="word">
+    			2
+    		</div>
+    	</figure>
+	    <figure class="right">
+    		<div class="word">
+    			3
+    		</div>	    	
+	    </figure>
+	    <figure class="left">
+    		<div class="word">
+    			4
+    		</div>	    	
+	    </figure>
+	    <figure class="top">
+    		<div class="word">
+    			5
+    		</div>	    	
+	    </figure>
+	    <figure class="bottom">
+    		<div class="word">
+    			6
+    		</div>	    	
+	    </figure>
+  	</div>
+	</section>   
+	<div id="btnGroup">
+		<button>正面</button>
+		<button>背面</button>
+		<button>左面</button>
+		<button>右面</button>
+		<button>顶面</button>
+		<button>底面</button>
+	</div> 
+	<script type="text/javascript">
+		var cube = document.getElementById('cube') 
+		document.getElementById('btnGroup').onclick = function(e) {
+			var show = e.target.innerText
+			switch(show) {
+				case '正面': cube.className = 'show-front'; break;
+				case '背面': cube.className = 'show-back'; break;
+				case '左面': cube.className = 'show-left'; break;
+				case '右面': cube.className = 'show-right'; break;
+				case '顶面': cube.className = 'show-top'; break;
+				case '底面': cube.className = 'show-bottom'; break;
+			}
+		}
+	</script>   
+</body>
+</html>
