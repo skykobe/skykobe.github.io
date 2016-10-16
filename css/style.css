@@ -599,3 +599,188 @@ a {
 	position: relative;
 	top: 50%;
 }
+.row {
+  width: 100%;
+}
+.col {
+  float: left;
+  width: 33.33%;
+}
+.container {
+  width: 10vw;
+  height: 10vw;
+  perspective: 500px;
+  position: relative;
+  margin: 0 auto;
+}
+.cube {
+  width: 100%;
+  height: 100%;
+  animation: cubeShow 8s linear infinite;
+  position: absolute;
+  transform-style: preserve-3d;
+  transform: rotateX(-15deg) rotateY(20deg);
+  cursor: pointer;
+}
+.cube .M {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  border: 1px solid gray;
+  position: absolute;
+}
+.cube img {
+  width: 100%;
+  height: 100%;
+}
+.front {
+  transform: translateZ(5vw);
+  background: rgba(0,0,0,0.5);
+}
+.back {
+  transform: translateZ(-5vw) rotateY(180deg);
+  background: rgba(120,80,0,0.5);
+}
+.right {
+  transform: rotateY(90deg) translateZ(5vw);
+  background: rgba(0,180,250,0.5);
+}
+.left {
+  transform: rotateY(-90deg) translateZ(5vw);
+  background: rgba(155,20,100,0.5);
+}
+.top {
+  transform: rotateX(-90deg) translateZ(5vw);
+  background: rgba(20,150,220,0.5);
+}
+.bottom {
+  transform: rotateX(90deg) translateZ(5vw);
+  background: rgba(0,255,255,0.5);
+}
+.title {
+  text-align: center;
+  margin-bottom: 80px;
+}
+.changeFrame {
+  position: fixed;
+  bottom: 5%;
+  height: 250px;
+  width: 100%;
+  border-top: 3px solid #cccccc;
+}
+.subCol {
+  float: left;
+  width: 16.66%;
+  height: 100%
+}
+.subCol > div {
+  height: 100%;
+  padding-top: 15px;
+}
+.subCol img {
+  width: 85%;
+  height: 90%;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 1px solid gray
+}
+.changeDir {
+  height: 10%;
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 2px;
+}
+#modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(255,255,255,0.5);
+	opacity: 0;
+	transition: opacity 0.5s linear;
+	display: none
+}
+#modal .main {
+	width: 30%;
+	margin: 0 auto;
+	position: relative;
+	top: 20%;
+	background: white;
+	box-shadow: 0px 0px 50px 15px rgba(0,237,252,.5); 
+	padding: 20px;
+	border-radius: 20px;
+}
+.main input {
+	font-size: 25px;
+	width: 100%;
+}
+.containerB {
+  position: relative;
+  margin: 0 auto;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  perspective: 750px;
+  transform-style: preserve-3d;
+}
+
+.gg {
+	transform: scale3d(0.3, 0.3, 0.3);
+}
+
+.containerB .inner {
+  transform-style: preserve-3d;
+  /*-webkit-transform-origin: 50vw 50vw 0;*/
+  transform-origin: 50vw 50vw;
+  transform: rotateX(-30deg) rotateY(40deg)
+}
+
+.containerB .sub {
+  width: 100vw;
+  height: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
+}
+
+.containerB .sub.front {
+  transform: translateZ(-50vw) scale(1.01);
+  background: rgba(0,0,0,0.5);
+}
+
+.containerB .sub.left {
+  transform: translate3d(-50vw, 0, 0) rotateY(90deg) scale(1.01);
+  background: rgba(155,20,100,0.5);
+}
+
+.containerB .sub.right {
+  transform: translate3d(50vw, 0, 0) rotateY(-90deg) scale(1.01);
+  background: rgba(0,180,250,0.5);
+}
+
+.containerB .sub.back {
+  transform: translateZ(50vw) rotateY(180deg) scale(1.01);
+  background: rgba(120,80,0,0.5);
+}
+
+.containerB .sub.top {
+  transform: translate3d(0, -50vw, 0) rotateX(-90deg);
+  background: rgba(20,150,220,0.5);
+}
+
+.containerB .sub.bottom {
+  transform: translate3d(0, 50vw, 0) rotateX(90deg);
+  background: rgba(0,255,255,0.5);
+}
+@-webkit-keyframes cubeShow {
+  from {
+    transform: rotateY(20deg) rotateX(-8deg);
+  }
+  to {
+    transform: rotateY(379deg) rotateX(-8deg);
+  }
+}

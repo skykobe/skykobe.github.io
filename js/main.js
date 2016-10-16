@@ -121,7 +121,12 @@ var musicPage = function() {
 	})
 } 
 var wallPage = function() {
-
+	loadHtml('template/photoAlbum.html', function(data) {
+		root.innerHTML = data
+		afterLoad('/js/photo.js', 'js', function() {			
+			console.log('photo is inited')
+		})
+	})
 }
 var wordPage = function() {
 	

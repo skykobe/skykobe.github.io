@@ -1,3 +1,4 @@
+console.log('in music.js')
 musicIniter.end()
 root.style = ''
 root.className = ''

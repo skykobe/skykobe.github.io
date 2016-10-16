@@ -4,7 +4,7 @@ var url = {
 	hash: 'RicardoPage'
 };
 var timer
-function test () {
+function test () { 
 	if(!loopCheck) {
 	   	var img = new Image();
 	   	img.src = 'rina.jpg' ;
@@ -101,11 +101,15 @@ function waitEnd () {
 	}
 }
 
-function Router () {
+function Router () { // 简易路由
 	this.start = function(obj) {
 		var fn = location.hash.split('#')[1];
-		fn = ( fn ? fn : '' );
-		obj[fn]()
+		try {
+			fn = ( fn ? fn : '' );
+			obj[fn]()
+		} catch (err) {
+			console.log('没有对应的路由哦')
+		}
 		window.onhashchange = function() {
 			var url = location.hash;
 			if(url) {
@@ -204,4 +208,13 @@ var musicPlayerInit = function() {
 		clearInterval(timer)
 		root.innerHTML = ''
 	}
+}
+/* 不想再用字符串拼接了，试写一个用起来类似require的text的 */
+var loadHtml = function (url, fn) {
+	fetch(url).then(function(res) {
+		return res.text()
+	}).then(function(data) {
+		var o = new Object()
+		fn.call(o, data)
+	})
 }
